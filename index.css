@@ -18,23 +18,25 @@ body {
     hsl(36, 3%, 30%)
   );
   color: #000;
+  scroll-behavior: smooth;
 }
 header,
 main,
 footer {
-  width: 100%;
-  padding: 15px;
+  min-width: 100%;
+  padding: 20px;
 }
 header {
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: flex;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: aliceblue;
   position: fixed;
   top: 0px;
   box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 header.active {
   background-color: black;
@@ -51,6 +53,7 @@ main {
   text-align: center;
   align-items: center;
   justify-content: center;
+  gap: 60px;
 }
 footer {
   font-size: 1.3rem;
@@ -90,10 +93,10 @@ footer .contact-icons {
   justify-content: center;
   text-align: center;
   gap: 15px;
-  margin-right: auto;
 }
 #logo-div img {
   width: 100px;
+  transition: background-color 0.8s ease-in-out, border-radius 0.8s ease-in-out;
 }
 #navbar {
   display: flex;
@@ -116,16 +119,26 @@ li a {
   text-align: center;
   text-decoration: none;
   color: inherit;
+  transition: text-decoration 0.5s ease-in, opacity 0.5s ease-in;
+}
+li a:hover {
+  text-decoration: underline;
+  opacity: 0.95;
 }
 #burger-menu-icon {
   width: 40px;
   right: 30px;
   display: none;
+  transition: background-color 0.8s ease-in-out;
+}
+header.active #burger-menu-icon {
+  background-color: white;
+  border-radius: 10px;
 }
 #image-container {
   background: url('./images/image8.jpg');
   background-size: cover;
-  height: 100vh;
+  height: 40vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -157,7 +170,7 @@ li a {
 
 @media screen and (max-width: 700px) {
   #container {
-    width: 90%;
+    width: 100%;
   }
   #navbar {
     display: none;
