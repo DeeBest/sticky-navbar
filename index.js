@@ -13,3 +13,17 @@ window.addEventListener('scroll', () => {
     header.classList.remove('active');
   }
 });
+
+const burgerMenuIcon = document.getElementById('burger-menu-icon');
+const mobileNavbar = document.getElementById('mobile-navbar');
+const crossNavbarIcon = document.getElementById('cross-nav-icon');
+
+burgerMenuIcon.addEventListener('click', () => {
+  mobileNavbar.classList.add('show');
+  burgerMenuIcon.style.display = 'none';
+});
+
+crossNavbarIcon.addEventListener('click', () => {
+  mobileNavbar.classList.remove('show');
+  burgerMenuIcon.style.display = 'block';
+});
