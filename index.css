@@ -98,13 +98,14 @@ footer .contact-icons {
   width: 100px;
   transition: background-color 0.8s ease-in-out, border-radius 0.8s ease-in-out;
 }
-#navbar {
+#desktop-navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-#navbar ul {
+#desktop-navbar ul,
+#mobile-navbar ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,16 +126,25 @@ li a:hover {
   text-decoration: underline;
   opacity: 0.95;
 }
-#burger-menu-icon {
+#burger-menu-icon,
+#cross-nav-icon {
+  display: none;
   width: 40px;
   right: 30px;
-  display: none;
   transition: background-color 0.8s ease-in-out;
 }
-header.active #burger-menu-icon {
+header.active #burger-menu-icon,
+#cross-nav-icon {
   background-color: white;
   border-radius: 10px;
 }
+
+/* -----------------mobile-------- */
+
+#mobile-navbar {
+  display: none;
+}
+
 #image-container {
   background: url('./images/image8.jpg');
   background-size: cover;
@@ -168,20 +178,17 @@ header.active #burger-menu-icon {
   height: 200px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 870px) {
   #container {
     width: 100%;
   }
-  #navbar {
+  #logo-div h1 {
     display: none;
   }
-  #logo-div {
-    font-size: 0.7rem;
-    gap: 5px;
-    flex-direction: column;
-  }
-  #logo-div img {
-    width: 70px;
+}
+@media screen and (max-width: 420px) {
+  #desktop-navbar {
+    display: none;
   }
   #burger-menu-icon {
     display: block;
